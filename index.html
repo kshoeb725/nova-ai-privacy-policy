@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official Privacy Policy and Statutory Data Protection Disclosures for Nova AI Wallpaper Agent (supporting Nova & Luma companions).">
+  <meta name="theme-color" content="#090D16">
+  <title>Privacy Policy — Nova AI Wallpaper Agent</title>
+  <style>
+    :root {
+      --bg-base: #090D16;
+      --bg-surface: rgba(15, 23, 42, 0.78);
+      --bg-surface-hover: rgba(30, 41, 59, 0.88);
+      --border-glass: rgba(0, 240, 255, 0.22);
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --cyan-primary: #00F0FF;
+      --cyan-glow: rgba(0, 240, 255, 0.35);
+      --violet-primary: #A855F7;
+      --violet-glow: rgba(168, 85, 247, 0.35);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --badge-bg: rgba(0, 240, 255, 0.12);
+      --badge-border: rgba(0, 240, 255, 0.3);
+      --badge-text: #38BDF8;
+      --card-radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-base);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.09) 0%, transparent 45%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 1.5rem 1rem 5rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* Header & Branding */
+    header {
+      background: var(--bg-surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--card-radius);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.42);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan-primary), var(--violet-primary));
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .app-title-group h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--cyan-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.35rem;
+    }
+
+    .app-subtitle {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge-violet {
+      background: rgba(168, 85, 247, 0.12);
+      border-color: rgba(168, 85, 247, 0.3);
+      color: #C084FC;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .meta-item strong {
+      color: var(--text-muted);
+    }
+
+    /* Accessible Language Switcher */
+    .lang-switcher-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.4rem;
+    }
+
+    .lang-switcher-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      padding: 0.45rem 1rem;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .lang-btn:focus-visible {
+      outline: 2px solid var(--cyan-primary);
+      outline-offset: 2px;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(168, 85, 247, 0.22));
+      color: #FFFFFF;
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
+
+    /* Section Cards */
+    .policy-section {
+      background: var(--bg-surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--card-radius);
+      padding: 1.85rem 2rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .policy-section:hover {
+      border-color: rgba(0, 240, 255, 0.28);
+      box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--cyan-primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+
+    .section-body {
+      color: #CBD5E1;
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .section-body p {
+      margin-bottom: 0.95rem;
+    }
+
+    .section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.policy-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.95rem 0;
+    }
+
+    ul.policy-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.85rem;
+      color: #E2E8F0;
+    }
+
+    ul.policy-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.policy-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.6rem;
+      top: 0;
+      color: var(--cyan-primary);
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    ul.policy-list li strong {
+      color: #FFFFFF;
+    }
+
+    /* Structured Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: rgba(30, 41, 59, 0.7);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #CBD5E1;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .highlight-card {
+      background: rgba(0, 240, 255, 0.05);
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .highlight-card strong {
+      color: var(--cyan-primary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 3.5rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--cyan-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Progressive enhancement for non-JS browsers */
+    .noscript-container {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .noscript-nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .noscript-nav-links a {
+      color: var(--cyan-primary);
+      text-decoration: none;
+    }
+
+    .noscript-nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.75rem 3.5rem 0.75rem;
+      }
+      header {
+        padding: 1.5rem 1.25rem;
+      }
+      .policy-section {
+        padding: 1.35rem 1.25rem;
+      }
+      .app-title-group h1 {
+        font-size: 1.7rem;
+      }
+      .lang-switcher-container {
+        align-items: flex-start;
+        width: 100%;
+      }
+      .lang-switcher {
+        width: 100%;
+        justify-content: stretch;
+      }
+      .lang-btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand-row">
+        <div class="app-title-group">
+          <h1>Nova AI Wallpaper Agent</h1>
+          <p class="app-subtitle">Official Privacy Policy &amp; Statutory Data Protection Disclosures</p>
+          <div class="badge-bar">
+            <span class="badge">Privacy-First Architecture</span>
+            <span class="badge badge-violet">Dual Companions: Nova &amp; Luma</span>
+            <span class="badge">DPDP Act, 2023 Statutory Disclosures</span>
+            <span class="badge">Google Play Policy Transparency</span>
+          </div>
+        </div>
+        <div class="lang-switcher-container">
+          <span class="lang-switcher-label">Select Language / भाषा चुनें</span>
+          <div class="lang-switcher" role="tablist" aria-label="Language selection">
+            <button id="tab-en" class="lang-btn active" role="tab" aria-selected="true" aria-controls="content-en" tabindex="0">English</button>
+            <button id="tab-hi" class="lang-btn" role="tab" aria-selected="false" aria-controls="content-hi" tabindex="-1">हिन्दी (Hindi)</button>
+          </div>
+        </div>
+      </div>
+      <div class="meta-bar">
+        <div class="meta-item"><strong>Policy Version:</strong> 1.2</div>
+        <div class="meta-item"><strong>Last Updated:</strong> November 2026</div>
+        <div class="meta-item"><strong>Classification:</strong> General Data Fiduciary (Independent Developer)</div>
+      </div>
+    </header>
+
+    <noscript>
+      <div class="noscript-container">
+        <p><strong>Accessibility Notice:</strong> JavaScript is currently disabled in your browser. Both the complete <strong>English</strong> and <strong>हिन्दी (Hindi)</strong> policies are displayed below.</p>
+        <div class="noscript-nav-links">
+          <a href="#content-en">&darr; English Policy</a>
+          <a href="#content-hi">&darr; हिन्दी गोपनीयता नीति</a>
+        </div>
+      </div>
+    </noscript>
+
+    <!-- ========================================================================= -->
+    <!-- ENGLISH POLICY CONTENT -->
+    <!-- ========================================================================= -->
+    <main id="content-en" role="tabpanel" aria-labelledby="tab-en" lang="en">
+      <!-- Section 1 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">1</span>
+          <h2 class="section-title">Application Identity &amp; Data Fiduciary Overview</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            <strong>Nova AI Wallpaper Agent</strong> ("Nova", "we", "our", or "the Application") is an interactive on-device live wallpaper and personal assistant companion supporting two distinct AI character personas: <strong>Nova</strong> and <strong>Luma</strong>.
+          </p>
+          <p>
+            This Application is developed and operated by <strong>Shoeb Munir Khan (Independent Developer of Nova AI Wallpaper Agent)</strong> ("Developer"), acting as the <strong>Data Fiduciary</strong> pursuant to India's <em>Digital Personal Data Protection Act, 2023</em> (DPDP Act, 2023) and applicable international privacy frameworks including Google Play Developer Program Policies.
+          </p>
+          <ul class="policy-list">
+            <li><strong>Data Fiduciary:</strong> Shoeb Munir Khan (Independent Developer of Nova AI Wallpaper Agent)</li>
+            <li><strong>Designated Privacy &amp; Grievance Contact Email:</strong> <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a></li>
+            <li><strong>Entity Classification:</strong> General Data Fiduciary (Independent Developer; not classified as a Significant Data Fiduciary under Section 10 of DPDP Act 2023).</li>
+            <li><strong>Core Architectural Principle:</strong> Nova is engineered with a strict local-first and privacy-by-design architecture. Core utility features run offline on your device, and no user accounts, passwords, or centralized tracking profiles are required.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">2</span>
+          <h2 class="section-title">Lawful Grounds for Processing Personal Data</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            In accordance with Sections 4 and 6 of the DPDP Act 2023, personal data is processed solely under the following lawful bases:
+          </p>
+          <ul class="policy-list">
+            <li><strong>Explicit Affirmative Consent (Section 6):</strong> Optional third-party cloud intelligence (Google Gemini API) is disabled by default and activated only upon your explicit, informed, affirmative consent within the Application Settings.</li>
+            <li><strong>User-Directed Execution:</strong> On-device utilities (such as alarms, flashlight toggling, contact calling, and local media playback) execute solely in direct response to your specific, real-time commands.</li>
+            <li><strong>Scope of Cloud AI Consent Withdrawal:</strong> You retain the right to withdraw Cloud AI consent at any time in Settings. Withdrawing Cloud AI consent immediately halts outbound requests and aborts in-flight network connections to the Google Gemini API. However, withdrawing Cloud AI consent does <strong>not</strong> affect separate, user-initiated safety/bug reporting (which is an independent, opt-in feature triggered only if you tap 'Report Issue'), nor does it override or disable the Android operating system's platform <code>SpeechRecognizer</code> or <code>TextToSpeech</code> providers, which operate under system settings.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">3</span>
+          <h2 class="section-title">On-Device Processing &amp; System Provider Realities</h2>
+        </div>
+        <div class="section-body">
+          <p>Nova is built on an on-device-first foundation. The precise technical reality of data handling for each feature is detailed below:</p>
+          <ul class="policy-list">
+            <li><strong>Voice Input &amp; Speech Recognition (<code>android.permission.RECORD_AUDIO</code>):</strong> Nova interfaces with the Android platform's native <code>SpeechRecognizer</code> API. Microphone audio is processed in volatile memory to convert spoken commands into text. Nova itself does not record, save, or transmit raw audio files to developer servers. However, depending on your device settings and chosen speech recognition provider (such as Google Speech Services or OEM system recognizers), your device's operating system speech provider may perform network processing in accordance with its own privacy policy.</li>
+            <li><strong>Speech Output &amp; Text-to-Speech (TTS):</strong> Spoken companion responses are synthesized locally using the device's selected Android TextToSpeech engine. Audio synthesis runs on your device; however, some system TTS engines may download or update voice data files from their respective providers over the network per operating system settings.</li>
+            <li><strong>Contacts &amp; Phone Calling (<code>android.permission.READ_CONTACTS</code>, <code>android.permission.CALL_PHONE</code>):</strong> Direct access to your device address book is strictly local and restricted to phonetic name matching when you ask to call or message a contact. The contact database itself is <strong>never uploaded or synced to Google Gemini, Supabase, or external servers</strong>. However, if you voluntarily speak, type, or include a contact's name or phone number in an AI conversational prompt, or if a contact is displayed on-screen during an 'Explain Screen' capture, that user-provided text or image is transmitted to Gemini as part of the query payload.</li>
+            <li><strong>Personal Memories &amp; Notes (<code>wallpaper_agent_memory.db</code>):</strong> Facts, reminders, and preferences you ask Nova or Luma to remember are stored in a local SQLite Room database within the application's private internal storage sandbox. This database is protected by Android OS application sandboxing (Linux UID isolation) and is explicitly excluded from cloud backups. No database-level SQLCipher encryption is applied to the SQLite file itself.</li>
+            <li><strong>Recent Conversation History:</strong> Contextual conversation turns (up to 20 turns) are held transiently in volatile RAM during your active session to maintain conversational continuity. This data is never written to disk and is completely cleared when the session is reset or the app process is terminated.</li>
+            <li><strong>Document &amp; File Access (Storage Access Framework - SAF):</strong> File search and indexing operate strictly within user-authorized directories granted via Android's system document picker. File contents and index caches remain 100% on-device.</li>
+            <li><strong>Device Settings &amp; System Controls:</strong> Toggles for flashlight, brightness, volume, Do Not Disturb, and alarms execute directly through standard Android system APIs without telemetry collection.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">4</span>
+          <h2 class="section-title">Optional Cloud AI Processing (Google Gemini Developer API — Free vs. Paid Tiers)</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            When you explicitly enable <strong>Optional Cloud AI Mode</strong> in Settings, conversational queries are processed using Google LLC's Gemini Developer API (via the standard developer REST endpoint <code>generativelanguage.googleapis.com</code>) over HTTPS:
+          </p>
+          <ul class="policy-list">
+            <li><strong>Data Transmitted to Gemini:</strong> Your typed or transcribed conversational prompt, recent active in-memory conversation context (up to 20 turns), and memory context summaries.</li>
+            <li><strong>Screen Understanding ("Explain Screen"):</strong> Only invoked when you explicitly initiate screen explanation and approve Android's system <code>MediaProjection</code> consent prompt. A single static frame is captured into volatile memory, scaled down (max 1024px), and sent to Gemini Vision over HTTPS. Screenshots are <strong>never saved to permanent storage</strong>.</li>
+            <li><strong>Personal Information in User Content:</strong> Conversational prompts and screen captures may themselves contain personal information if you voluntarily type, speak, or display sensitive details. You are advised not to submit confidential or sensitive personal data.</li>
+            <li><strong>Developer API Tiers &amp; Data Use (Free vs. Paid Keys):</strong> Under Google's Gemini Developer API terms, when using free-tier quotas or default developer endpoints, Google may log and review prompts and generated content to train and improve Google models and products. If you supply your own paid Google AI Studio or Google Cloud Vertex AI API key in Settings, Google's paid customer terms apply (where prompts are not used to train Google foundation models). In all cases, Nova operates via Google's developer API rather than custom enterprise zero-retention contracts.</li>
+            <li><strong>Cross-Border Transfer (Section 16 DPDP Act):</strong> Cloud AI requests are processed in Google Cloud data centers located in the United States and globally in compliance with applicable cross-border transfer rules.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">5</span>
+          <h2 class="section-title">AI Safety Reporting &amp; Third-Party Processors</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Nova includes an optional safety reporting feature allowing users to report offensive, harmful, inaccurate, or privacy-concerning AI responses directly to the developer:
+          </p>
+          <ul class="policy-list">
+            <li><strong>Voluntary, User-Initiated Submissions:</strong> A safety report is never transmitted automatically; it is generated solely when you tap "Report Issue" on an AI response and confirm submission.</li>
+            <li><strong>Opt-In Response Excerpt (Excluded by Default):</strong> The AI response excerpt is <strong>excluded by default</strong> (transmitted as an empty string) unless you explicitly check the opt-in box to include it. Original conversation history and user prompts are never attached.</li>
+            <li><strong>Client-Side Privacy Sanitization:</strong> Before transmission, client-side regex sanitizers scan the optional excerpt and feedback to redact email addresses, phone numbers, IP addresses, and cryptographic keys. Any excerpt containing multiple sensitive entities or private keys is automatically dropped entirely.</li>
+            <li><strong>Serverless Relay (Supabase Edge Functions) &amp; Email Delivery (Resend):</strong> Reports are transmitted over HTTPS to a Supabase Edge Function (<code>submit-ai-report</code>) that verifies rate limits and forwards the report via Resend's transactional email service directly to the developer's mailbox.</li>
+            <li><strong>Distinction from Rate Limiting:</strong> No persistent database table of report contents or user profiles is stored in Supabase. Supabase maintains only an ephemeral rate-limiting table storing salted, cryptographic SHA-256 hashes of client identifiers with an automatic 10-minute expiration. Hashed identifiers are pseudonymous, and expiration is distinct from instantaneous physical erasure of cloud platform infrastructure logs.</li>
+            <li><strong>Email Retention in Developer Mailbox:</strong> Reports delivered to the developer's mailbox are retained as email correspondence for bug remediation, quality assurance, and AI safety analysis until manually archived or deleted.</li>
+            <li><strong>Third-Party Processors:</strong> Supabase Inc. (edge function execution and rate limiting) and Resend Inc. (transactional email dispatch) process report data and standard connection metadata (IP addresses, timestamps) in accordance with their respective privacy policies.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">6</span>
+          <h2 class="section-title">Security Safeguards, Encryption &amp; Backup Rules</h2>
+        </div>
+        <div class="section-body">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data Category</th>
+                  <th>Storage Location</th>
+                  <th>Security / Protection Mechanism</th>
+                  <th>Retention Period</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Personal Memories &amp; Notes</td>
+                  <td>On-Device SQLite (Room)</td>
+                  <td>Android OS application sandbox (Linux UID isolation)</td>
+                  <td>Retained until user deletion or app uninstall</td>
+                </tr>
+                <tr>
+                  <td>Custom Gemini API Key</td>
+                  <td>Device SharedPreferences</td>
+                  <td>AndroidKeyStore hardware-backed AES-256 GCM encryption</td>
+                  <td>Retained until user clears or uninstalls</td>
+                </tr>
+                <tr>
+                  <td>Conversation Session Context</td>
+                  <td>Volatile Device RAM</td>
+                  <td>Process-isolated RAM only (never written to disk)</td>
+                  <td>Purged on session reset or app closure</td>
+                </tr>
+                <tr>
+                  <td>Cloud AI Prompts</td>
+                  <td>Google Gemini API (Transit)</td>
+                  <td>Standard HTTPS / TLS encryption in transit</td>
+                  <td>Subject to Google developer API retention policies</td>
+                </tr>
+                <tr>
+                  <td>Safety Report Emails</td>
+                  <td>Developer Mailbox</td>
+                  <td>Encrypted transit (HTTPS / TLS SMTP) &amp; mailbox access controls</td>
+                  <td>Retained for developer review and bug fixing</td>
+                </tr>
+                <tr>
+                  <td>Ephemeral Rate-Limit Buckets</td>
+                  <td>Supabase Serverless DB</td>
+                  <td>Salted SHA-256 hash only; Row-Level Security (RLS)</td>
+                  <td>Automatically expires after 10 minutes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="highlight-card">
+            <strong>Android Cloud Backup Exclusions:</strong> Pursuant to privacy-by-design principles, all local databases (<code>wallpaper_agent_memory.db</code>, <code>ai_response_reports.db</code>), SharedPreferences, Keystore keys, and SAF folder tokens are explicitly excluded from Google Drive cloud backups and device-to-device transfers in <code>backup_rules.xml</code> and <code>data_extraction_rules.xml</code>.
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">7</span>
+          <h2 class="section-title">User Privacy Rights, Data Erasure &amp; Uninstall Clarification</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Under Section 12 of the DPDP Act 2023 and Google Play User Data Policies, you have complete control over your personal data:
+          </p>
+          <ul class="policy-list">
+            <li><strong>Delete Individual Memories:</strong> Tap the delete icon next to any saved fact in Settings &rarr; Memory &amp; Privacy to immediately erase it from local SQLite storage.</li>
+            <li><strong>Clear All Memories:</strong> Tap "Clear All Memories" in Settings &rarr; Memory &amp; Privacy to physically purge all saved notes and facts from local storage.</li>
+            <li><strong>Purge Conversation History:</strong> Tap "Clear Conversation History" in Settings &rarr; AI &amp; Offline Mode to instantly wipe volatile in-memory context.</li>
+            <li><strong>Withdraw Cloud AI Consent:</strong> Toggle off "Cloud AI Mode" in Settings at any time to immediately cease all communication with Google Gemini.</li>
+            <li><strong>App Uninstall vs. Third-Party Data:</strong> Uninstalling Nova completely deletes all local databases, preferences, and Keystore keys from your device. However, uninstalling the app <strong>does not delete data previously transmitted to third parties</strong> (such as report emails already delivered to the developer inbox, or technical connection logs held by Google Gemini, Supabase, or Resend). To request deletion of prior email correspondence, contact the developer at <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">8</span>
+          <h2 class="section-title">Target Audience &amp; Children's Privacy</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Nova AI Wallpaper Agent is designed and intended for general audiences aged 18 and older. The Application does not incorporate age-gating mechanisms or technical systems for verifiable parental consent. It is not directed towards children under 13, nor do we knowingly collect, solicit, or process personal data from minors under 18 years of age. We do not engage in behavioral tracking, user profiling, or targeted advertising. If you are a parent or legal guardian and believe that a minor has provided personal data to the Application, please contact our Grievance Officer at <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a> to request verification and prompt erasure.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 9 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">9</span>
+          <h2 class="section-title">Grievance Redressal &amp; Phased DPDP Act Framework</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            In accordance with Sections 8(9) and 13 of the DPDP Act 2023 and Google Play Developer Program policies, you may direct all privacy inquiries, rights requests, or complaints to our designated Grievance Officer:
+          </p>
+          <ul class="policy-list">
+            <li><strong>Designated Grievance Officer:</strong> Shoeb Munir Khan (Grievance Officer &amp; Data Fiduciary)</li>
+            <li><strong>Official Privacy &amp; Grievance Email:</strong> <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a></li>
+            <li><strong>Resolution Timeline:</strong> We are committed to acknowledging and resolving privacy inquiries and grievances in a timely manner, targeting resolution within 30 days as envisioned under the DPDP framework.</li>
+            <li><strong>Phased DPDP Commencement Notice:</strong> Following the Ministry of Electronics and Information Technology (MeitY) phased commencement notifications (notably starting November 13, 2025), certain administrative rules and institutional mechanisms—including the formal operation of the Data Protection Board of India (DPBI)—are rolled out in stages. Core application-level privacy protections (such as local-first storage, affirmative consent, and in-app erasure) are actively implemented today, while statutory adjudicatory channels take effect as each provision is formally operationalized under Indian law.</li>
+            <li><strong>Regulatory Recourse:</strong> Upon the full operationalization of the Data Protection Board of India (DPBI), users retain the statutory right under Section 13(3) of the DPDP Act 2023 to file complaints if unresolved by the Data Fiduciary.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 10 -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">10</span>
+          <h2 class="section-title">Policy Updates &amp; Public Hosting</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            We may update this Privacy Policy from time to time to reflect technical enhancements, security updates, or evolving regulatory rules. Any material updates will be disclosed prominently within the application.
+          </p>
+          <p>
+            <strong>Official Hosted Public Policy URL:</strong><br>
+            <span style="color: var(--cyan-primary); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem;">This policy is prepared for public HTTPS hosting via GitHub Pages or Cloudflare Pages and will be linked directly within the Google Play Console upon public release.</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- HINDI POLICY CONTENT (SCHEDULE 8 COMPLIANCE) -->
+    <!-- ========================================================================= -->
+    <main id="content-hi" role="tabpanel" aria-labelledby="tab-hi" lang="hi" style="display: none;">
+      <!-- Section 1 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">१</span>
+          <h2 class="section-title">ऐप परिचय और डेटा फिडुशियरी विवरण</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            <strong>नोवा एआई वॉलपेपर एजेंट</strong> ("नोवा", "हम", "हमारा") दो एआई साथी चरित्रों (नोवा और लूमा) के साथ एक बुद्धिमान ऑन-डिवाइस लाइव वॉलपेपर और निजी सहायक एप्लिकेशन है।
+          </p>
+          <p>
+            यह एप्लिकेशन <strong>शोएब मुनीर खान (नोवा एआई वॉलपेपर एजेंट के स्वतंत्र डेवलपर)</strong> द्वारा विकसित और संचालित किया जाता है, जो भारत के <em>डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम, २०२३</em> (DPDP Act, 2023) और गूगल प्ले डेवलपर नीतियों के तहत <strong>डेटा फिडुशियरी</strong> के रूप में कार्य करते हैं।
+          </p>
+          <ul class="policy-list">
+            <li><strong>डेटा फिडुशियरी:</strong> Shoeb Munir Khan (Independent Developer of Nova AI Wallpaper Agent)</li>
+            <li><strong>आधिकारिक गोपनीयता व शिकायत ईमेल:</strong> <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a></li>
+            <li><strong>वर्गीकरण:</strong> सामान्य डेटा फिडुशियरी (डीपीडीपी अधिनियम २०२३ की धारा १० के तहत महत्वपूर्ण डेटा फिडुशियरी नहीं)।</li>
+            <li><strong>मुख्य सिद्धांत:</strong> नोवा को गोपनीयता-प्रथम और डिवाइस-प्रथम दृष्टिकोण के साथ बनाया गया है। मुख्य सुविधाएं आपके फोन पर बिना किसी खाते या ट्रैकिंग के ऑफलाइन चलती हैं।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 2 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">२</span>
+          <h2 class="section-title">डेटा प्रोसेसिंग के कानूनी आधार</h2>
+        </div>
+        <div class="section-body">
+          <p>डीपीडीपी अधिनियम २०२३ की धारा ४ और धारा ६ के तहत आपका व्यक्तिगत डेटा केवल निम्नलिखित वैध आधारों पर संसाधित होता है:</p>
+          <ul class="policy-list">
+            <li><strong>स्पष्ट पूर्व सहमति (धारा ६):</strong> वैकल्पिक क्लाउड एआई (Google Gemini) डिफ़ॉल्ट रूप से बंद रहता है और केवल सेटिंग्स में आपकी स्पष्ट, सूचित सहमति के बाद ही सक्रिय होता है।</li>
+            <li><strong>उपयोगकर्ता-निर्देशित आदेश:</strong> अलार्म, टॉर्च, स्थानीय कॉल और संगीत केवल आपके सीधे निर्देश पर निष्पादित होते हैं।</li>
+            <li><strong>सहमति वापस लेने का दायरा:</strong> आपको किसी भी समय सेटिंग्स से क्लाउड एआई सहमति वापस लेने का अधिकार है। इससे Google Gemini को जाने वाले अनुरोध तुरंत रुक जाते हैं। हालांकि, क्लाउड सहमति वापस लेने से उपयोगकर्ता द्वारा स्वेच्छा से भेजी जाने वाली अलग सुरक्षा रिपोर्ट या फोन के सिस्टम स्पीच इंजन प्रभावित नहीं होते हैं।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 3 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">३</span>
+          <h2 class="section-title">ऑन-डिवाइस प्रोसेसिंग और सिस्टम प्रदाता की वास्तविकता</h2>
+        </div>
+        <div class="section-body">
+          <p>नोवा का मुख्य आधार डिवाइस-प्रथम है। प्रत्येक सुविधा के डेटा प्रवाह की वास्तविक स्थिति नीचे स्पष्ट की गई है:</p>
+          <ul class="policy-list">
+            <li><strong>आवाज पहचान (माइक्रोफोन):</strong> नोवा एंड्रॉइड के <code>SpeechRecognizer</code> एपीआई का उपयोग करता है। आवाज़ को मेमोरी में टेक्स्ट में बदला जाता है। नोवा स्वयं कोई ऑडियो फ़ाइल सर्वर पर अपलोड नहीं करता है। हालांकि, आपके डिवाइस की सेटिंग्स और चुने गए सिस्टम स्पीच प्रोवाइडर (जैसे Google Speech Services) के आधार पर, सिस्टम प्रदाता अपनी नीति के अनुसार नेटवर्क प्रोसेसिंग कर सकता है।</li>
+            <li><strong>आवाज आउटपुट (TTS):</strong> जवाब एंड्रॉइड के टेक्स्ट-टू-स्पीच इंजन द्वारा डिवाइस पर ही बोले जाते हैं। कुछ सिस्टम इंजन अपनी नीति के तहत आवाज़ डेटा डाउनलोड कर सकते हैं।</li>
+            <li><strong>संपर्क और कॉलिंग (READ_CONTACTS, CALL_PHONE):</strong> फोन बुक तक सीधी पहुंच केवल स्थानीय फोन कॉल या संदेश के लिए होती है और संपर्क डेटाबेस कभी भी जेमिनी या सर्वर पर अपलोड नहीं होता। हालांकि, यदि आप स्वयं किसी संपर्क का नाम या नंबर प्रश्न में बोलते या लिखते हैं, या वह स्क्रीन समझ के दौरान स्क्रीन पर दिखता है, तो वह प्रॉम्प्ट का हिस्सा बनकर जेमिनी को प्रेषित होता है।</li>
+            <li><strong>व्यक्तिगत यादें और नोट्स:</strong> सहेजे गए तथ्य डिवाइस के निजी सैंडबॉक्स में SQLite Room डेटाबेस (wallpaper_agent_memory.db) में रहते हैं, जो एंड्रॉइड ओएस सैंडबॉक्सिंग (UID अलगाव) द्वारा सुरक्षित हैं और क्लाउड बैकअप से बाहर हैं। डेटाबेस फ़ाइल पर कोई SQLCipher एन्क्रिप्शन नहीं है।</li>
+            <li><strong>हालिया बातचीत का इतिहास:</strong> संदर्भ (अधिकतम २० संवाद) केवल सत्र के दौरान अस्थायी रैम (RAM) में रहता है और सत्र समाप्त होने पर नष्ट हो जाता है।</li>
+            <li><strong>दस्तावेज़ और फ़ाइलें (SAF):</strong> फ़ाइल खोज केवल उन फ़ोल्डरों तक सीमित है जिनकी अनुमति आप स्टोरेज एक्सेस फ्रेमवर्क के माध्यम से देते हैं। फ़ाइलें डिवाइस पर ही रहती हैं।</li>
+            <li><strong>डिवाइस सेटिंग्स:</strong> टॉर्च, ब्राइटनेस, वॉल्यूम और अलार्म जैसे नियंत्रण बिना किसी टेलीमेट्री के एंड्रॉइड सिस्टम एपीआई द्वारा चलाए जाते हैं।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 4 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">४</span>
+          <h2 class="section-title">वैकल्पिक क्लाउड एआई (Google Gemini Developer API — मुफ़्त बनाम सशुल्क)</h2>
+        </div>
+        <div class="section-body">
+          <p>जब आप सेटिंग्स में <strong>क्लाउड एआई मोड</strong> सक्षम करते हैं, तो बातचीत सुरक्षित एचटीटीपीएस द्वारा Google Gemini Developer API (generativelanguage.googleapis.com) पर प्रोसेस होती है:</p>
+          <ul class="policy-list">
+            <li><strong>जेमिनी को भेजी जाने वाली जानकारी:</strong> आपका प्रश्न, वर्तमान सत्र का संदर्भ (अधिकतम २० संवाद), और यादों का सारांश।</li>
+            <li><strong>स्क्रीन समझ ("Explain Screen"):</strong> केवल तब जब आप 'Explain Screen' चुनते हैं और एंड्रॉइड सिस्टम सहमति देते हैं। स्क्रीन का एक फ्रेम मेमोरी में प्रोसेस होकर जेमिनी को भेजा जाता है। स्क्रीनशॉट कभी डिस्क पर स्टोर नहीं होता।</li>
+            <li><strong>प्रॉम्प्ट में व्यक्तिगत डेटा:</strong> बातचीत के प्रश्नों और स्क्रीनशॉट में आपके द्वारा दर्ज संवेदनशील विवरण शामिल हो सकते हैं। संवेदनशील जानकारी साझा न करने की सलाह दी जाती है।</li>
+            <li><strong>डेवलपर एपीआई स्तर और डेटा उपयोग (मुफ़्त बनाम सशुल्क कुंजी):</strong> गूगल की जेमिनी डेवलपर शर्तों के अनुसार, मुफ़्त स्तर पर गूगल मॉडलों को बेहतर बनाने के लिए प्रॉम्प्ट की समीक्षा कर सकता है। यदि आप सेटिंग्स में अपनी सशुल्क Google AI Studio / Vertex AI एपीआई कुंजी जोड़ते हैं, तो गूगल की सशुल्क ग्राहक शर्तें लागू होती हैं (जहां प्रॉम्प्ट का उपयोग मॉडल प्रशिक्षण के लिए नहीं किया जाता)। नोवा किसी कस्टम एंटरप्राइज़ अनुबंध के बजाय मानक डेवलपर एपीआई पर कार्य करता है।</li>
+            <li><strong>सीमा पार डेटा ट्रांसफर:</strong> डीपीडीपी अधिनियम २०२३ की धारा १६ के तहत क्लाउड एआई डेटा संयुक्त राज्य अमेरिका और वैश्विक स्तर पर Google Cloud डेटा केंद्रों में संसाधित होता है।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 5 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">५</span>
+          <h2 class="section-title">एआई सुरक्षा रिपोर्टिंग और तृतीय-पक्ष प्रोसेसर</h2>
+        </div>
+        <div class="section-body">
+          <p>नोवा में आपत्तिजनक या गलत एआई प्रतिक्रियाओं की रिपोर्ट करने की स्वैच्छिक सुविधा उपलब्ध है:</p>
+          <ul class="policy-list">
+            <li><strong>उपयोगकर्ता द्वारा शुरू की गई रिपोर्ट:</strong> रिपोर्ट केवल तब भेजी जाती है जब आप 'Report Issue' दबाकर पुष्टि करते हैं।</li>
+            <li><strong>प्रतिक्रिया अंश डिफ़ॉल्ट रूप से बाहर:</strong> प्रतिक्रिया का अंश डिफ़ॉल्ट रूप से शामिल नहीं होता (खाली भेजा जाता है) जब तक कि आप टिक न करें। मूल प्रश्न या पूरा इतिहास कभी नहीं भेजा जाता।</li>
+            <li><strong>डिवाइस पर गोपनीयता फ़िल्टर:</strong> भेजने से पहले नाम, फोन नंबर, ईमेल, आईपी और क्रिप्टोग्राफ़िक कुंजियों को स्थानीय रूप से हटा दिया जाता है।</li>
+            <li><strong>सर्वरलेस रिले (Supabase) व ईमेल डिलीवरी (Resend):</strong> रिपोर्ट एन्क्रिप्टेड HTTPS द्वारा Supabase Edge Function पर जाती है और Resend के माध्यम से सीधे डेवलपर के मेलबॉक्स पर भेजी जाती है।</li>
+            <li><strong>रेट-लिमिटिंग से अंतर:</strong> Supabase में रिपोर्ट सामग्री का कोई स्थायी डेटाबेस नहीं होता। केवल दर-सीमा लागू करने के लिए हेक्साडेसिमल हैश १० मिनट के लिए अस्थायी रूप से रखे जाते हैं। हैश छद्मनामी (pseudonymous) होते हैं। क्लाउड सर्वर लॉग तुरंत नष्ट होने की गारंटी नहीं होती।</li>
+            <li><strong>ईमेल प्रतिधारण:</strong> डेवलपर मेलबॉक्स में प्राप्त रिपोर्ट ईमेल बग निवारण और सुरक्षा समीक्षा के लिए मैन्युअल रूप से हटाए जाने तक संग्रहीत रहते हैं।</li>
+            <li><strong>तृतीय-पक्ष प्रोसेसर:</strong> Supabase Inc. और Resend Inc. अपनी गोपनीयता नीतियों के तहत रिपोर्ट डेटा और तकनीकी कनेक्शन मेटाडेटा प्रोसेस करते हैं।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 6 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">६</span>
+          <h2 class="section-title">सुरक्षा उपाय, एन्क्रिप्शन और बैकअप नियम</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            <strong>एंड्रॉइड क्लाउड बैकअप से बाहर:</strong> आपकी गोपनीयता के लिए, सभी निजी डेटाबेस (<code>wallpaper_agent_memory.db</code>, <code>ai_response_reports.db</code>), कीस्टोर कुंजियां और SAF टोकन Google Drive क्लाउड बैकअप और डिवाइस ट्रांसफर से पूरी तरह बाहर रखे गए हैं (<code>backup_rules.xml</code> और <code>data_extraction_rules.xml</code>)।
+          </p>
+          <ul class="policy-list">
+            <li><strong>सैंडबॉक्स सुरक्षा:</strong> स्थानीय SQLite डेटाबेस ऐप के निजी आंतरिक स्टोरेज में एंड्रॉइड लिनक्स UID अलगाव द्वारा सुरक्षित है। डेटाबेस फ़ाइल पर कोई SQLCipher एन्क्रिप्शन नहीं है।</li>
+            <li><strong>हार्डवेयर कीस्टोर:</strong> कस्टम जेमिनी एपीआई की डिवाइस के सिक्योर चिप (AndroidKeyStore TEE/StrongBox) में AES-256 GCM से सुरक्षित हैं।</li>
+            <li><strong>कोई रिमोट खाता नहीं:</strong> नोवा में पासवर्ड या क्लाउड लॉगिन की आवश्यकता नहीं है, जिससे डेटा उल्लंघन का कोई केंद्रीय खतरा नहीं रहता।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 7 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">७</span>
+          <h2 class="section-title">डेटा मिटाने का अधिकार और अनइंस्टॉल स्पष्टीकरण</h2>
+        </div>
+        <div class="section-body">
+          <p>डीपीडीपी अधिनियम २०२३ की धारा १२ और गूगल प्ले नीतियों के तहत आपके पास पूर्ण नियंत्रण है:</p>
+          <ul class="policy-list">
+            <li><strong>यादें मिटाएं:</strong> सेटिंग्स में जाकर किसी भी याद को तुरंत डेटाबेस से मिटा सकते हैं।</li>
+            <li><strong>सभी यादें हटाएं:</strong> 'Clear All Memories' दबाकर संपूर्ण सहेजी गई यादें हमेशा के लिए साफ करें।</li>
+            <li><strong>सहमति वापस लें:</strong> सेटिंग्स में 'Cloud AI Mode' बंद करके तुरंत ऑन-डिवाइस मोड पर लौटें।</li>
+            <li><strong>अनइंस्टॉल बनाम तृतीय-पक्ष डेटा:</strong> ऐप को अनइंस्टॉल करने पर डिवाइस से सारा स्थानीय डेटा तुरंत नष्ट हो जाता है। हालांकि, पहले से तीसरे पक्षों को भेजी गई जानकारी (जैसे डेवलपर मेलबॉक्स में भेजी गई रिपोर्ट ईमेल या क्लाउड तकनीकी लॉग) अनइंस्टॉल से अपने आप नहीं मिटती। ईमेल मिटाने के लिए डेवलपर से संपर्क करें।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 8 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">८</span>
+          <h2 class="section-title">लक्षित दर्शक और बच्चों की गोपनीयता</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            नोवा एआई वॉलपेपर एजेंट १८ वर्ष और उससे अधिक आयु के उपयोगकर्ताओं के लिए अभिप्रेत है। ऐप में आयु-सत्यापन या माता-पिता की सहमति की तकनीकी प्रणाली नहीं है। यह १३ वर्ष से कम उम्र के बच्चों के लिए निर्देशित नहीं है, और हम जानबूझकर नाबालिगों के व्यक्तिगत डेटा को संसाधित नहीं करते हैं। हम नाबालिगों पर कोई व्यवहार निगरानी या लक्षित विज्ञापन नहीं करते हैं। यदि किसी बच्चे ने बिना अनुमति के डेटा साझा किया है, तो अभिभावक तुरंत <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a> पर संपर्क कर डेटा मिटाने का अनुरोध कर सकते हैं।
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 9 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">९</span>
+          <h2 class="section-title">शिकायत निवारण अधिकारी और चरणबद्ध डीपीडीपी ढांचा</h2>
+        </div>
+        <div class="section-body">
+          <p>डीपीडीपी अधिनियम २०२३ की धारा ८(९) और १३ के अनुसार हमारे शिकायत निवारण अधिकारी से संपर्क करें:</p>
+          <ul class="policy-list">
+            <li><strong>नामित शिकायत निवारण अधिकारी:</strong> Shoeb Munir Khan (Grievance Officer &amp; Data Fiduciary)</li>
+            <li><strong>आधिकारिक गोपनीयता और शिकायत ईमेल:</strong> <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a></li>
+            <li><strong>समाधान समय सीमा:</strong> हम डीपीडीपी ढांचे के तहत ३० दिनों के भीतर गोपनीयता प्रश्नों और शिकायतों का समाधान करने के लिए प्रतिबद्ध हैं।</li>
+            <li><strong>चरणबद्ध अधिसूचना स्पष्टीकरण:</strong> इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी मंत्रालय (MeitY) की चरणबद्ध अधिसूचनाओं (विशेष रूप से १३ नवंबर २०२५ से प्रारंभ) के तहत प्रशासनिक नियम और भारतीय डेटा संरक्षण बोर्ड (DPBI) का संचालन चरणों में लागू किया जा रहा है। ऐप-स्तरीय गोपनीयता नियंत्रण आज सक्रिय हैं, जबकि औपचारिक कानूनी बोर्ड तंत्र अधिसूचित होने पर पूरी तरह प्रभावी होगा।</li>
+            <li><strong>वैधानिक अपील:</strong> डीपीबीआई के पूर्ण संचालन के बाद, यदि शिकायत का समाधान नहीं होता है, तो उपयोगकर्ता को डेटा संरक्षण बोर्ड में जाने का कानूनी अधिकार होगा।</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 10 (HI) -->
+      <section class="policy-section">
+        <div class="section-header">
+          <span class="section-number">१०</span>
+          <h2 class="section-title">नीति में बदलाव और सार्वजनिक होस्टिंग</h2>
+        </div>
+        <div class="section-body">
+          <p>तकनीकी या कानूनी सुधारों के अनुसार इस नीति को समय-समय पर अपडेट किया जा सकता है। किसी भी महत्वपूर्ण बदलाव की जानकारी ऐप में दी जाएगी।</p>
+          <p><strong>आधिकारिक सार्वजनिक नीति वेब पता:</strong><br><span style="color: var(--cyan-primary); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem;">यह नीति GitHub Pages या Cloudflare Pages द्वारा सार्वजनिक HTTPS होस्टिंग के लिए तैयार है और सार्वजनिक रिलीज पर Google Play Console में जोड़ी जाएगी।</span></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Nova AI Wallpaper Agent &bull; Operated by Shoeb Munir Khan (Independent Developer). All rights reserved.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed with reference to Google Play Developer Program Policies &amp; India's Digital Personal Data Protection Act, 2023. Informational disclosure only; does not constitute legal counsel or government certification.</p>
+    </footer>
+  </div>
+
+  <script>
+    const tabEn = document.getElementById('tab-en');
+    const tabHi = document.getElementById('tab-hi');
+    const contentEn = document.getElementById('content-en');
+    const contentHi = document.getElementById('content-hi');
+
+    function switchLanguage(lang) {
+      if (lang === 'hi') {
+        contentEn.style.display = 'none';
+        contentHi.style.display = 'block';
+        tabEn.classList.remove('active');
+        tabEn.setAttribute('aria-selected', 'false');
+        tabEn.setAttribute('tabindex', '-1');
+        tabHi.classList.add('active');
+        tabHi.setAttribute('aria-selected', 'true');
+        tabHi.setAttribute('tabindex', '0');
+        tabHi.focus();
+        document.documentElement.setAttribute('lang', 'hi');
+      } else {
+        contentEn.style.display = 'block';
+        contentHi.style.display = 'none';
+        tabHi.classList.remove('active');
+        tabHi.setAttribute('aria-selected', 'false');
+        tabHi.setAttribute('tabindex', '-1');
+        tabEn.classList.add('active');
+        tabEn.setAttribute('aria-selected', 'true');
+        tabEn.setAttribute('tabindex', '0');
+        tabEn.focus();
+        document.documentElement.setAttribute('lang', 'en');
+      }
+    }
+
+    tabEn.addEventListener('click', () => switchLanguage('en'));
+    tabHi.addEventListener('click', () => switchLanguage('hi'));
+
+    // Keyboard accessibility for tablist (Arrow keys, Home, End)
+    const tabs = [tabEn, tabHi];
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('keydown', (e) => {
+        let targetIndex = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          targetIndex = (index + 1) % tabs.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          targetIndex = (index - 1 + tabs.length) % tabs.length;
+        } else if (e.key === 'Home') {
+          targetIndex = 0;
+        } else if (e.key === 'End') {
+          targetIndex = tabs.length - 1;
+        }
+
+        if (targetIndex !== null) {
+          e.preventDefault();
+          const targetLang = targetIndex === 0 ? 'en' : 'hi';
+          switchLanguage(targetLang);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
