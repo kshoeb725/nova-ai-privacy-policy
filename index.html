@@ -329,6 +329,43 @@
       color: var(--cyan-primary);
     }
 
+    /* Default language panels state (managed via CSS & JS) */
+    main#content-hi {
+      display: none;
+    }
+
+    /* Progressive enhancement for non-JS browsers */
+    .noscript-container {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .noscript-nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.6rem;
+      font-weight: 600;
+    }
+
+    .noscript-nav-links a {
+      color: var(--cyan-primary);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 6px;
+    }
+
+    .noscript-nav-links a:hover {
+      text-decoration: underline;
+      background: rgba(0, 240, 255, 0.2);
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -344,33 +381,6 @@
     }
 
     footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Progressive enhancement for non-JS browsers */
-    .noscript-container {
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid var(--border-glass);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .noscript-nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 0.5rem;
-      font-weight: 600;
-    }
-
-    .noscript-nav-links a {
-      color: var(--cyan-primary);
-      text-decoration: none;
-    }
-
-    .noscript-nav-links a:hover {
       text-decoration: underline;
     }
 
@@ -402,6 +412,21 @@
       }
     }
   </style>
+
+  <!-- No-JavaScript CSS override: guarantees Hindi content is fully visible when scripting is disabled -->
+  <noscript>
+    <style>
+      main#content-hi {
+        display: block !important;
+        margin-top: 3rem;
+        border-top: 2px dashed rgba(0, 240, 255, 0.3);
+        padding-top: 3rem;
+      }
+      .lang-switcher-container {
+        display: none !important;
+      }
+    </style>
+  </noscript>
 </head>
 <body>
   <div class="container">
@@ -435,10 +460,10 @@
 
     <noscript>
       <div class="noscript-container">
-        <p><strong>Accessibility Notice:</strong> JavaScript is currently disabled in your browser. Both the complete <strong>English</strong> and <strong>हिन्दी (Hindi)</strong> policies are displayed below.</p>
+        <p><strong>Accessibility Notice:</strong> JavaScript is currently disabled in your browser. Both the complete <strong>English</strong> and <strong>हिन्दी (Hindi)</strong> policies are displayed below for full accessibility.</p>
         <div class="noscript-nav-links">
-          <a href="#content-en">&darr; English Policy</a>
-          <a href="#content-hi">&darr; हिन्दी गोपनीयता नीति</a>
+          <a href="#content-en">&darr; Jump to English Policy</a>
+          <a href="#content-hi">&darr; हिन्दी गोपनीयता नीति पर जाएं</a>
         </div>
       </div>
     </noscript>
@@ -482,7 +507,7 @@
           <ul class="policy-list">
             <li><strong>Explicit Affirmative Consent (Section 6):</strong> Optional third-party cloud intelligence (Google Gemini API) is disabled by default and activated only upon your explicit, informed, affirmative consent within the Application Settings.</li>
             <li><strong>User-Directed Execution:</strong> On-device utilities (such as alarms, flashlight toggling, contact calling, and local media playback) execute solely in direct response to your specific, real-time commands.</li>
-            <li><strong>Scope of Cloud AI Consent Withdrawal:</strong> You retain the right to withdraw Cloud AI consent at any time in Settings. Withdrawing Cloud AI consent immediately halts outbound requests and aborts in-flight network connections to the Google Gemini API. However, withdrawing Cloud AI consent does <strong>not</strong> affect separate, user-initiated safety/bug reporting (which is an independent, opt-in feature triggered only if you tap 'Report Issue'), nor does it override or disable the Android operating system's platform <code>SpeechRecognizer</code> or <code>TextToSpeech</code> providers, which operate under system settings.</li>
+            <li><strong>Scope of Cloud AI Consent Withdrawal:</strong> You retain the right to withdraw Cloud AI consent at any time in Settings. Withdrawing Cloud AI consent immediately halts outbound requests and aborts in-flight client socket connections to the Google Gemini API. However, withdrawing Cloud AI consent does <strong>not</strong> affect separate, user-initiated safety/bug reporting (which is an independent, opt-in feature triggered only if you tap 'Report Issue'), nor does it override or disable the Android operating system's platform <code>SpeechRecognizer</code> or <code>TextToSpeech</code> providers, which operate under system settings.</li>
           </ul>
         </div>
       </section>
@@ -497,7 +522,7 @@
           <p>Nova is built on an on-device-first foundation. The precise technical reality of data handling for each feature is detailed below:</p>
           <ul class="policy-list">
             <li><strong>Voice Input &amp; Speech Recognition (<code>android.permission.RECORD_AUDIO</code>):</strong> Nova interfaces with the Android platform's native <code>SpeechRecognizer</code> API. Microphone audio is processed in volatile memory to convert spoken commands into text. Nova itself does not record, save, or transmit raw audio files to developer servers. However, depending on your device settings and chosen speech recognition provider (such as Google Speech Services or OEM system recognizers), your device's operating system speech provider may perform network processing in accordance with its own privacy policy.</li>
-            <li><strong>Speech Output &amp; Text-to-Speech (TTS):</strong> Spoken companion responses are synthesized locally using the device's selected Android TextToSpeech engine. Audio synthesis runs on your device; however, some system TTS engines may download or update voice data files from their respective providers over the network per operating system settings.</li>
+            <li><strong>Speech Output &amp; Text-to-Speech (TTS):</strong> Spoken companion responses are synthesized locally using the device's selected Android TextToSpeech engine. Audio synthesis runs on your device; however, some system TTS engines may download or update voice model data files over the network per operating system settings.</li>
             <li><strong>Contacts &amp; Phone Calling (<code>android.permission.READ_CONTACTS</code>, <code>android.permission.CALL_PHONE</code>):</strong> Direct access to your device address book is strictly local and restricted to phonetic name matching when you ask to call or message a contact. The contact database itself is <strong>never uploaded or synced to Google Gemini, Supabase, or external servers</strong>. However, if you voluntarily speak, type, or include a contact's name or phone number in an AI conversational prompt, or if a contact is displayed on-screen during an 'Explain Screen' capture, that user-provided text or image is transmitted to Gemini as part of the query payload.</li>
             <li><strong>Personal Memories &amp; Notes (<code>wallpaper_agent_memory.db</code>):</strong> Facts, reminders, and preferences you ask Nova or Luma to remember are stored in a local SQLite Room database within the application's private internal storage sandbox. This database is protected by Android OS application sandboxing (Linux UID isolation) and is explicitly excluded from cloud backups. No database-level SQLCipher encryption is applied to the SQLite file itself.</li>
             <li><strong>Recent Conversation History:</strong> Contextual conversation turns (up to 20 turns) are held transiently in volatile RAM during your active session to maintain conversational continuity. This data is never written to disk and is completely cleared when the session is reset or the app process is terminated.</li>
@@ -511,7 +536,7 @@
       <section class="policy-section">
         <div class="section-header">
           <span class="section-number">4</span>
-          <h2 class="section-title">Optional Cloud AI Processing (Google Gemini Developer API — Free vs. Paid Tiers)</h2>
+          <h2 class="section-title">Optional Cloud AI Processing (Google Gemini Developer API — Billing-Linked Project Tiers)</h2>
         </div>
         <div class="section-body">
           <p>
@@ -521,7 +546,8 @@
             <li><strong>Data Transmitted to Gemini:</strong> Your typed or transcribed conversational prompt, recent active in-memory conversation context (up to 20 turns), and memory context summaries.</li>
             <li><strong>Screen Understanding ("Explain Screen"):</strong> Only invoked when you explicitly initiate screen explanation and approve Android's system <code>MediaProjection</code> consent prompt. A single static frame is captured into volatile memory, scaled down (max 1024px), and sent to Gemini Vision over HTTPS. Screenshots are <strong>never saved to permanent storage</strong>.</li>
             <li><strong>Personal Information in User Content:</strong> Conversational prompts and screen captures may themselves contain personal information if you voluntarily type, speak, or display sensitive details. You are advised not to submit confidential or sensitive personal data.</li>
-            <li><strong>Developer API Tiers &amp; Data Use (Free vs. Paid Keys):</strong> Under Google's Gemini Developer API terms, when using free-tier quotas or default developer endpoints, Google may log and review prompts and generated content to train and improve Google models and products. If you supply your own paid Google AI Studio or Google Cloud Vertex AI API key in Settings, Google's paid customer terms apply (where prompts are not used to train Google foundation models). In all cases, Nova operates via Google's developer API rather than custom enterprise zero-retention contracts.</li>
+            <li><strong>Service Tiers Based on Billing Status:</strong> Under Google's Gemini Developer API terms, when the API key is associated with an unbilled / Free-Tier Google Cloud or Google AI Studio project, Google may review prompts and model outputs to train and refine its foundation models. If you configure an API key linked to a project with billing enabled (Paid Tier), Google's paid customer terms apply, under which customer data is not used for model training. Note that standard Paid-tier terms do not constitute custom zero-data-retention or zero-logging agreements; Google retains operational logs per its published policies.</li>
+            <li><strong>Client-Side Connection Cancellation:</strong> When you disable Cloud AI or cancel a query, the application severs the local HTTP connection. This halts device-side data transfer, but does not guarantee cancellation of server-side processing for packets that already reached Google's infrastructure prior to disconnection.</li>
             <li><strong>Cross-Border Transfer (Section 16 DPDP Act):</strong> Cloud AI requests are processed in Google Cloud data centers located in the United States and globally in compliance with applicable cross-border transfer rules.</li>
           </ul>
         </div>
@@ -542,7 +568,7 @@
             <li><strong>Opt-In Response Excerpt (Excluded by Default):</strong> The AI response excerpt is <strong>excluded by default</strong> (transmitted as an empty string) unless you explicitly check the opt-in box to include it. Original conversation history and user prompts are never attached.</li>
             <li><strong>Client-Side Privacy Sanitization:</strong> Before transmission, client-side regex sanitizers scan the optional excerpt and feedback to redact email addresses, phone numbers, IP addresses, and cryptographic keys. Any excerpt containing multiple sensitive entities or private keys is automatically dropped entirely.</li>
             <li><strong>Serverless Relay (Supabase Edge Functions) &amp; Email Delivery (Resend):</strong> Reports are transmitted over HTTPS to a Supabase Edge Function (<code>submit-ai-report</code>) that verifies rate limits and forwards the report via Resend's transactional email service directly to the developer's mailbox.</li>
-            <li><strong>Distinction from Rate Limiting:</strong> No persistent database table of report contents or user profiles is stored in Supabase. Supabase maintains only an ephemeral rate-limiting table storing salted, cryptographic SHA-256 hashes of client identifiers with an automatic 10-minute expiration. Hashed identifiers are pseudonymous, and expiration is distinct from instantaneous physical erasure of cloud platform infrastructure logs.</li>
+            <li><strong>Distinction from Rate Limiting:</strong> No persistent database table of report contents or user profiles is stored in Supabase. Supabase maintains only an ephemeral rate-limiting table storing salted, cryptographic SHA-256 hashes of client identifiers with an automatic 10-minute expiration. Hashed identifiers are pseudonymous; expiration removes table entries but is distinct from instantaneous physical erasure of cloud hosting infrastructure access logs.</li>
             <li><strong>Email Retention in Developer Mailbox:</strong> Reports delivered to the developer's mailbox are retained as email correspondence for bug remediation, quality assurance, and AI safety analysis until manually archived or deleted.</li>
             <li><strong>Third-Party Processors:</strong> Supabase Inc. (edge function execution and rate limiting) and Resend Inc. (transactional email dispatch) process report data and standard connection metadata (IP addresses, timestamps) in accordance with their respective privacy policies.</li>
           </ul>
@@ -576,7 +602,7 @@
                 <tr>
                   <td>Custom Gemini API Key</td>
                   <td>Device SharedPreferences</td>
-                  <td>AndroidKeyStore hardware-backed AES-256 GCM encryption</td>
+                  <td>AndroidKeyStore hardware-backed AES-256 GCM encryption (with fallback)</td>
                   <td>Retained until user clears or uninstalls</td>
                 </tr>
                 <tr>
@@ -658,8 +684,8 @@
           <ul class="policy-list">
             <li><strong>Designated Grievance Officer:</strong> Shoeb Munir Khan (Grievance Officer &amp; Data Fiduciary)</li>
             <li><strong>Official Privacy &amp; Grievance Email:</strong> <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a></li>
-            <li><strong>Resolution Timeline:</strong> We are committed to acknowledging and resolving privacy inquiries and grievances in a timely manner, targeting resolution within 30 days as envisioned under the DPDP framework.</li>
-            <li><strong>Phased DPDP Commencement Notice:</strong> Following the Ministry of Electronics and Information Technology (MeitY) phased commencement notifications (notably starting November 13, 2025), certain administrative rules and institutional mechanisms—including the formal operation of the Data Protection Board of India (DPBI)—are rolled out in stages. Core application-level privacy protections (such as local-first storage, affirmative consent, and in-app erasure) are actively implemented today, while statutory adjudicatory channels take effect as each provision is formally operationalized under Indian law.</li>
+            <li><strong>Voluntary Service Response Commitment:</strong> The Developer voluntarily commits to acknowledging and endeavoring to resolve all privacy inquiries and grievances within a target timeframe of 30 calendar days as a matter of good-faith service practice. (Statutory redressal timelines will be governed by specific DPDP Rules once formally notified and in force).</li>
+            <li><strong>Phased DPDP Commencement Notice:</strong> Following the Ministry of Electronics and Information Technology (MeitY) phased commencement notifications (notably starting November 13, 2025), certain administrative rules and institutional mechanisms—including the formal operation of the Data Protection Board of India (DPBI)—are rolled out in stages. Core application-level privacy protections (such as local-first storage, affirmative consent, and in-app erasure) are voluntarily implemented by the developer today, while formal statutory dispute mechanisms take effect as each provision is formally operationalized under Indian law.</li>
             <li><strong>Regulatory Recourse:</strong> Upon the full operationalization of the Data Protection Board of India (DPBI), users retain the statutory right under Section 13(3) of the DPDP Act 2023 to file complaints if unresolved by the Data Fiduciary.</li>
           </ul>
         </div>
@@ -686,7 +712,7 @@
     <!-- ========================================================================= -->
     <!-- HINDI POLICY CONTENT (SCHEDULE 8 COMPLIANCE) -->
     <!-- ========================================================================= -->
-    <main id="content-hi" role="tabpanel" aria-labelledby="tab-hi" lang="hi" style="display: none;">
+    <main id="content-hi" role="tabpanel" aria-labelledby="tab-hi" lang="hi">
       <!-- Section 1 (HI) -->
       <section class="policy-section">
         <div class="section-header">
@@ -720,7 +746,7 @@
           <ul class="policy-list">
             <li><strong>स्पष्ट पूर्व सहमति (धारा ६):</strong> वैकल्पिक क्लाउड एआई (Google Gemini) डिफ़ॉल्ट रूप से बंद रहता है और केवल सेटिंग्स में आपकी स्पष्ट, सूचित सहमति के बाद ही सक्रिय होता है।</li>
             <li><strong>उपयोगकर्ता-निर्देशित आदेश:</strong> अलार्म, टॉर्च, स्थानीय कॉल और संगीत केवल आपके सीधे निर्देश पर निष्पादित होते हैं।</li>
-            <li><strong>सहमति वापस लेने का दायरा:</strong> आपको किसी भी समय सेटिंग्स से क्लाउड एआई सहमति वापस लेने का अधिकार है। इससे Google Gemini को जाने वाले अनुरोध तुरंत रुक जाते हैं। हालांकि, क्लाउड सहमति वापस लेने से उपयोगकर्ता द्वारा स्वेच्छा से भेजी जाने वाली अलग सुरक्षा रिपोर्ट या फोन के सिस्टम स्पीच इंजन प्रभावित नहीं होते हैं।</li>
+            <li><strong>सहमति वापस लेने का दायरा:</strong> आपको किसी भी समय सेटिंग्स से क्लाउड एआई सहमति वापस लेने का अधिकार है। इससे Google Gemini को जाने वाले अनुरोध तुरंत रुक जाते हैं और सॉकेट कनेक्शन बंद हो जाता है। हालांकि, क्लाउड सहमति वापस लेने से उपयोगकर्ता द्वारा स्वेच्छा से भेजी जाने वाली अलग सुरक्षा रिपोर्ट या फोन के सिस्टम स्पीच इंजन प्रभावित नहीं होते हैं।</li>
           </ul>
         </div>
       </section>
@@ -749,15 +775,16 @@
       <section class="policy-section">
         <div class="section-header">
           <span class="section-number">४</span>
-          <h2 class="section-title">वैकल्पिक क्लाउड एआई (Google Gemini Developer API — मुफ़्त बनाम सशुल्क)</h2>
+          <h2 class="section-title">वैकल्पिक क्लाउड एआई (Google Gemini Developer API — बिलिंग-संबद्ध स्तर)</h2>
         </div>
         <div class="section-body">
-          <p>जब आप सेटिंग्स में <strong>क्लाउड एआई मोड</strong> सक्षम करते हैं, तो बातचीत सुरक्षित एचटीटीपीएस द्वारा Google Gemini Developer API (generativelanguage.googleapis.com) पर प्रोसेस होती है:</p>
+          <p>जब आप सेटिंग्स में <strong>क्लाउड एआई मोड</strong> सक्षम करते हैं, तो बातचीत सुरक्षित एचटीटीपीएस द्वारा Google LLC के Gemini Developer API (generativelanguage.googleapis.com) पर प्रोसेस होती है:</p>
           <ul class="policy-list">
             <li><strong>जेमिनी को भेजी जाने वाली जानकारी:</strong> आपका प्रश्न, वर्तमान सत्र का संदर्भ (अधिकतम २० संवाद), और यादों का सारांश।</li>
             <li><strong>स्क्रीन समझ ("Explain Screen"):</strong> केवल तब जब आप 'Explain Screen' चुनते हैं और एंड्रॉइड सिस्टम सहमति देते हैं। स्क्रीन का एक फ्रेम मेमोरी में प्रोसेस होकर जेमिनी को भेजा जाता है। स्क्रीनशॉट कभी डिस्क पर स्टोर नहीं होता।</li>
             <li><strong>प्रॉम्प्ट में व्यक्तिगत डेटा:</strong> बातचीत के प्रश्नों और स्क्रीनशॉट में आपके द्वारा दर्ज संवेदनशील विवरण शामिल हो सकते हैं। संवेदनशील जानकारी साझा न करने की सलाह दी जाती है।</li>
-            <li><strong>डेवलपर एपीआई स्तर और डेटा उपयोग (मुफ़्त बनाम सशुल्क कुंजी):</strong> गूगल की जेमिनी डेवलपर शर्तों के अनुसार, मुफ़्त स्तर पर गूगल मॉडलों को बेहतर बनाने के लिए प्रॉम्प्ट की समीक्षा कर सकता है। यदि आप सेटिंग्स में अपनी सशुल्क Google AI Studio / Vertex AI एपीआई कुंजी जोड़ते हैं, तो गूगल की सशुल्क ग्राहक शर्तें लागू होती हैं (जहां प्रॉम्प्ट का उपयोग मॉडल प्रशिक्षण के लिए नहीं किया जाता)। नोवा किसी कस्टम एंटरप्राइज़ अनुबंध के बजाय मानक डेवलपर एपीआई पर कार्य करता है।</li>
+            <li><strong>बिलिंग स्थिति के आधार पर सेवा स्तर:</strong> जब एपीआई कुंजी बिना बिलिंग वाले (मुफ़्त) प्रोजेक्ट से जुड़ी होती है, तो गूगल मॉडलों को प्रशिक्षित करने के लिए प्रॉम्प्ट की समीक्षा कर सकता है। यदि आप बिलिंग-सक्षम (सशुल्क) प्रोजेक्ट की कुंजी जोड़ते हैं, तो सशुल्क शर्तें लागू होती हैं (जहां डेटा का उपयोग प्रशिक्षण के लिए नहीं होता)। ध्यान दें कि सशुल्क शर्तें शून्य-डेटा-प्रतिधारण का पूर्ण अनुबंध नहीं हैं; गूगल तकनीकी लॉगिंग बनाए रखता है।</li>
+            <li><strong>क्लाइंट-साइड कनेक्शन रद्दीकरण:</strong> सहमति वापस लेने या रद्द करने पर फोन से कनेक्शन काट दिया जाता है, लेकिन यह उन पैकेटों के सर्वर-साइड प्रोसेसिंग को पूरी तरह रोकने की गारंटी नहीं देता जो पहले ही पहुंच चुके हैं।</li>
             <li><strong>सीमा पार डेटा ट्रांसफर:</strong> डीपीडीपी अधिनियम २०२३ की धारा १६ के तहत क्लाउड एआई डेटा संयुक्त राज्य अमेरिका और वैश्विक स्तर पर Google Cloud डेटा केंद्रों में संसाधित होता है।</li>
           </ul>
         </div>
@@ -795,7 +822,7 @@
           </p>
           <ul class="policy-list">
             <li><strong>सैंडबॉक्स सुरक्षा:</strong> स्थानीय SQLite डेटाबेस ऐप के निजी आंतरिक स्टोरेज में एंड्रॉइड लिनक्स UID अलगाव द्वारा सुरक्षित है। डेटाबेस फ़ाइल पर कोई SQLCipher एन्क्रिप्शन नहीं है।</li>
-            <li><strong>हार्डवेयर कीस्टोर:</strong> कस्टम जेमिनी एपीआई की डिवाइस के सिक्योर चिप (AndroidKeyStore TEE/StrongBox) में AES-256 GCM से सुरक्षित हैं।</li>
+            <li><strong>हार्डवेयर कीस्टोर:</strong> कस्टम जेमिनी एपीआई की डिवाइस के सिक्योर चिप (AndroidKeyStore TEE/StrongBox) में AES-256 GCM से सुरक्षित हैं (असमर्थित डिवाइसों पर सॉफ़्टवेयर फ़ॉलबैक)।</li>
             <li><strong>कोई रिमोट खाता नहीं:</strong> नोवा में पासवर्ड या क्लाउड लॉगिन की आवश्यकता नहीं है, जिससे डेटा उल्लंघन का कोई केंद्रीय खतरा नहीं रहता।</li>
           </ul>
         </div>
@@ -842,8 +869,8 @@
           <ul class="policy-list">
             <li><strong>नामित शिकायत निवारण अधिकारी:</strong> Shoeb Munir Khan (Grievance Officer &amp; Data Fiduciary)</li>
             <li><strong>आधिकारिक गोपनीयता और शिकायत ईमेल:</strong> <a href="mailto:shoebbussiness786@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">shoebbussiness786@gmail.com</a></li>
-            <li><strong>समाधान समय सीमा:</strong> हम डीपीडीपी ढांचे के तहत ३० दिनों के भीतर गोपनीयता प्रश्नों और शिकायतों का समाधान करने के लिए प्रतिबद्ध हैं।</li>
-            <li><strong>चरणबद्ध अधिसूचना स्पष्टीकरण:</strong> इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी मंत्रालय (MeitY) की चरणबद्ध अधिसूचनाओं (विशेष रूप से १३ नवंबर २०२५ से प्रारंभ) के तहत प्रशासनिक नियम और भारतीय डेटा संरक्षण बोर्ड (DPBI) का संचालन चरणों में लागू किया जा रहा है। ऐप-स्तरीय गोपनीयता नियंत्रण आज सक्रिय हैं, जबकि औपचारिक कानूनी बोर्ड तंत्र अधिसूचित होने पर पूरी तरह प्रभावी होगा।</li>
+            <li><strong>स्वैच्छिक सेवा प्रतिक्रिया प्रतिबद्धता:</strong> डेवलपर सद्भाव सेवा अभ्यास के रूप में ३० कैलेंडर दिनों की लक्षित समय सीमा के भीतर सभी गोपनीयता प्रश्नों और शिकायतों का समाधान करने का स्वैच्छिक प्रयास करता है। (वैधानिक समय सीमा विशिष्ट डीपीडीपी नियमों के औपचारिक रूप से अधिसूचित होने पर शासित होगी)।</li>
+            <li><strong>चरणबद्ध अधिसूचना स्पष्टीकरण:</strong> इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी मंत्रालय (MeitY) की चरणबद्ध अधिसूचनाओं (विशेष रूप से १३ नवंबर २०२५ से प्रारंभ) के तहत प्रशासनिक नियम और भारतीय डेटा संरक्षण बोर्ड (DPBI) का संचालन चरणों में लागू किया जा रहा है। ऐप-स्तरीय गोपनीयता नियंत्रण डेवलपर द्वारा स्वेच्छा से लागू किए गए हैं, जबकि औपचारिक कानूनी बोर्ड तंत्र अधिसूचित होने पर पूरी तरह प्रभावी होगा।</li>
             <li><strong>वैधानिक अपील:</strong> डीपीबीआई के पूर्ण संचालन के बाद, यदि शिकायत का समाधान नहीं होता है, तो उपयोगकर्ता को डेटा संरक्षण बोर्ड में जाने का कानूनी अधिकार होगा।</li>
           </ul>
         </div>
