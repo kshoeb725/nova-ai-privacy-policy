@@ -6,7 +6,9 @@ The Privacy Policy explains how the application handles user information, includ
 
 ## Privacy Policy
 
-The official Privacy Policy is available through GitHub Pages.
+The official Privacy Policy is given available link .
+
+https://kshoeb725.github.io/nova-ai-privacy-policy/
 
 ## Contact
 
